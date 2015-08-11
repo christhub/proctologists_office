@@ -18,5 +18,8 @@ class Task
     @@tasks
   end
 
+  define_singleton_method(:clear) do
+    @@tasks = []
+  end
 
 end
