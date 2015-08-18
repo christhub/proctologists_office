@@ -32,3 +32,12 @@ post('/list') do
   list.save()
   erb(:list_success)
 end
+
+post("/tasks") do
+  description = params.fetch("description")
+  list_id = params.fetch('list_id').to_i()
+  @list = List.find(list_id)
+  @task = Task.new({:description => description, :list_id => list_id})
+  @task.save()
+  erb(:task_success)
+end
