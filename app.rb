@@ -17,6 +17,11 @@ get('/lists') do
   erb(:lists)
 end
 
+get('/list/:id') do
+  @list = List.find(params.fetch("id").to_i)
+  erb(:list)
+end
+
 get("/list/new/") do
   erb(:list_form)
 end
