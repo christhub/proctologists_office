@@ -17,7 +17,7 @@ get('/lists') do
   erb(:lists)
 end
 
-get('/list/:id') do
+get('/lists/:id') do
   @list = List.find(params.fetch("id").to_i)
   erb(:list)
 end
@@ -33,7 +33,7 @@ post('/list') do
   erb(:list_success)
 end
 
-post("/tasks") do
+post("/task") do
   description = params.fetch("description")
   list_id = params.fetch('list_id').to_i()
   @list = List.find(list_id)
