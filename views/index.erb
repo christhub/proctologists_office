@@ -2,17 +2,19 @@
 
 <p> Your Tasks: </p>
 
+<% if @tasks %>
 <ul>
   <% @tasks.each() do |task| %>
     <li><%= task.description() %></li>
   <% end %>
 </ul>
+<% end %>
 
 <p> Make a task </p>
 
-<form action='to_do' method = 'post'>
-  <label for = 'description'>Task Description </label>
-  <input id = 'description' name = 'description' placeholder='Enter task' type = 'text' autofocus required>
+<form action='/list' method = 'post'>
+  <label for = 'name'>Task Name </label>
+  <input id = 'name' name = 'name' placeholder='Enter task' type = 'text' autofocus required>
 
   <button type = 'submit'>Add Task</button>
 </form>
