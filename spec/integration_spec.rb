@@ -8,7 +8,7 @@ describe('adding a new list', {:type => :feature}) do
     visit('/')
     click_link('Add New List')
     fill_in('name', :with => 'Epicodus Work')
-    click_button('Add List')
+    click_button('Add list')
     expect(page).to have_content('Success!')
   end
 end
