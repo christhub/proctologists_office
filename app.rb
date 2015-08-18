@@ -22,7 +22,7 @@ get('/lists/:id') do
   erb(:list)
 end
 
-get("/list/new/") do
+get("/list/new") do
   erb(:list_form)
 end
 
